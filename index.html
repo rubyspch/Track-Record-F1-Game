@@ -9,18 +9,62 @@
     </head>
     <body>
         <main id="container">
+
             <div class="start">
                 <h1>🏁 Track Record 🏁</h1>
                 <h2>Can you recognise F1 tracks by their outline? Test yourself and practice using Track Record</h2>
                 <button></button>
             </div>
+
             <div class="setup">
-                
+                <form action="#">
+                    <input type="radio" id="free-pratice" name="difficulty-level" value="free-pratice">
+                    <label for="free-practice">Free Practice</label>
+
+                    <input type="radio" id="softs" name="difficulty-level" value="softs">
+                    <label for="softs">Softs</label>
+                    
+                    <input type="radio" id="mediums" name="difficulty-level" value="mediums">
+                    <label for="mediums">Mediums</label>
+
+                    <input type="radio" id="hards" name="difficulty-level" value="hards">
+                    <label for="hards">Hards</label>
+
+                    <p id="">Explanation of the level selected will appear here depending on which they choose.</p>
+
+                    <p>Include:</p>
+                    <input type="checkbox" id="past-winners" name="past-winners" value="show-winners-yes" checked>
+                    <label for="past-winners">First and most recent winner</label><br>
+
+                    <input type="checkbox" id="active-dates" name="active-dates" value="show-dates-yes" checked>
+                    <label for="active-dates">Years on F1 calender</label> <br>
+
+                    <button type="submit">Start</button>
+                </form>
             </div>
-            <div class="play"></div>
+
+            <div class="play">
+                <img src="#" alt="Track Outline">
+                <section class="current-track-data">
+                    <p>First winner here:<span id="track-first-winner"></span></p>
+                    <p>Most recent winner here:<span id="track-last-winner"></span></p>
+                    <p>Years on the calendar:<span id="track-years active"></span></p>
+                </section> <!-- Use spans to add data to page? -->
+                <section id="multiple-choice">
+                    <input type="radio" id="option-1" name="options" value="option-1">
+                    <label for="option-1">Option 1</label><br>
+
+                    <input type="radio" id="option-2" name="options" value="option-2">
+                    <label for="option-2">Option 2</label><br>
+                    
+                    <input type="radio" id="option-3" name="options" value="option-3">
+                    <label for="option-3">Option 3</label><br>
+                </section>
+            </div>
+
             <div class="result"></div>
             <!--
-                If trigger is pressed, make visible the next phase. So when start button is clicked, show setup class and hide start class. Use toggle images code from js image filter program?
+                If trigger is pressed, make visible the next phase. So when start button is clicked, show setup class and hide start class. Use toggle images method from js image filter program?
             -->
         </main>
         <script src="index.js"></script>

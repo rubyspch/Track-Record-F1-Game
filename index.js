@@ -50,14 +50,32 @@ const startGameButton = document.querySelector('button#startGameButton');
 startGameButton.addEventListener('click', setupGame);
 
 const image = document.querySelector('img#track-photo');
+
+//Grab option buttons and add click listener to them
 const selectedOptions = [document.querySelector('button#option-1'), document.querySelector('button#option-2'), document.querySelector('button#option-3')];
 selectedOptions.forEach(element => {
     element.addEventListener('click', checked);
 });
+
+// Set base question tracker and score
 let roundAnswer=[];
 let userScore = 0;
 
+// Grab next and see result buttons for end of round
+const seeResultButton = document.querySelector('button#see-result');
+const nextButton = document.querySelector('button#next');
+const scoreText = document.querySelector('h1#score');
+const scoreResponse = document.querySelector('h2#score-response');
+
+seeResultButton.addEventListener('click', endGame);
+nextButton.addEventListener('click', setupGame);
+
 function setupGame(){
+    if (roundAnswer.length == 10){
+        seeResultButton.style.display = "block";
+        nextButton.style.display = "none";
+    } 
+
     let randomNum;
     do{ // Get new random number if the current one has already been used. PROBS NOT THE MOST EFFICIENT METHOD.
         randomNum=Math.floor((Math.random() * numOfTracks))
@@ -118,9 +136,39 @@ function checked(){
     if(userGuess.textContent == roundAnswer[currentAnswerIndex]){
         userGuess.style.backgroundColor = "green";
         currentScore++;
-        console.log("correct");
+        console.log("correct! Current Score: " + currentScore);
     } else{
         userGuess.style.backgroundColor = "red";
-        console.log("incorrect");
+        console.log("incorrect!  Current Score: " + currentScore);
     }
 }
+
+// function nextRound(){
+//     setupGame();
+// }
+
+function endGame(){
+
+    scoreText.textContent = currentScore + "/10";
+
+    scoreResponse.textContent = scoreCategory(currentScore);
+
+    seeResultButton.style.display = "none";
+    nextButton.style.display = "block";
+}
+function scoreCategory(score){
+    switch(score){
+        case(10):
+            return "Perfect score! Try upping the difficulty.";
+        case(8||9):
+            return "Nearly perfect, try again.";
+        case(5||6||7):
+            return "Solid score! Keep practicing.";
+        case(3||4):
+            return "You know a few, but do some more practice if you want to improve.";
+        case(0||1||2):
+            return "If at first you don't succeed, try try again.";
+        default:
+            return "Have another go if you think you can do better!"
+    }
+};

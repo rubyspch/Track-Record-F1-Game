@@ -35,3 +35,6 @@ body{
 #container .play img{
     width:100%;
 }
+#container #see-result{
+    display: none;
+}

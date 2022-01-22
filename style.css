@@ -16,12 +16,12 @@ body{
     height:100%;
     width: 100%;
 }
-/* #container .start{
+#container .start{
     display: block;
 }
 #container .setup, .play,.result{
     display: none;
-} */
+}
 #container .start button{
     height:30px;
     width: 50%;

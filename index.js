@@ -45,17 +45,20 @@ const trackInfo = [
 
 const numOfTracks=trackInfo.length;
 
-const startGameButton = document.querySelector('button#startGameButton');
+const beginGameButton = document.querySelector('button#start-game-button');
 
-startGameButton.addEventListener('click', setupGame);
+beginGameButton.addEventListener('click', setupGame);
 
 const image = document.querySelector('img#track-photo');
 
 //Grab option buttons and add click listener to them
 const selectedOptions = [document.querySelector('button#option-1'), document.querySelector('button#option-2'), document.querySelector('button#option-3')];
-selectedOptions.forEach(element => {
-    element.addEventListener('click', checked);
-});
+// selectedOptions.forEach(element => {
+//     element.addEventListener('click', checked);
+// });
+for(let i=0; i<selectedOptions.length;i++){
+    selectedOptions[i].addEventListener('click', checked);
+};
 
 // Set base question tracker and score
 let roundAnswer=[];
@@ -71,15 +74,15 @@ seeResultButton.addEventListener('click', endGame);
 nextButton.addEventListener('click', setupGame);
 
 function setupGame(){
-    if (roundAnswer.length == 10){
+    if (roundAnswer.length == 5){
         seeResultButton.style.display = "block";
         nextButton.style.display = "none";
     } 
 
     let randomNum;
     do{ // Get new random number if the current one has already been used. PROBS NOT THE MOST EFFICIENT METHOD.
-        randomNum=Math.floor((Math.random() * numOfTracks))
-    } while (roundAnswer.indexOf(trackInfo[randomNum].name));
+        randomNum=Math.floor((Math.random() * numOfTracks));
+    } while (roundAnswer.indexOf(trackInfo[randomNum].name)>-1);
 
     //Append the selected track's details to the page
     appendText(document.querySelector('span#track-first-winner'),trackInfo[randomNum].firstWinner);
@@ -115,6 +118,7 @@ function getOptions(answer){
     } while (optionB==answer);
     
     roundAnswer.push(answer);
+    console.log("answersArray =" + roundAnswer);
 
     return [answer, optionA, optionB];
 }
@@ -135,26 +139,23 @@ function checked(){
     let currentAnswerIndex = roundAnswer.length - 1;
     if(userGuess.textContent == roundAnswer[currentAnswerIndex]){
         userGuess.style.backgroundColor = "green";
-        currentScore++;
-        console.log("correct! Current Score: " + currentScore);
+        userScore++;
+        console.log("correct! Current Score: " + userScore);
     } else{
         userGuess.style.backgroundColor = "red";
-        console.log("incorrect!  Current Score: " + currentScore);
+        console.log("incorrect!  Current Score: " + userScore);
     }
 }
 
-// function nextRound(){
-//     setupGame();
-// }
-
 function endGame(){
 
-    scoreText.textContent = currentScore + "/10";
+    scoreText.textContent = userScore + "/10";
 
-    scoreResponse.textContent = scoreCategory(currentScore);
+    scoreResponse.textContent = scoreCategory(userScore);
 
     seeResultButton.style.display = "none";
     nextButton.style.display = "block";
+    userScore = 0;
 }
 function scoreCategory(score){
     switch(score){

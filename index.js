@@ -43,6 +43,28 @@ const trackInfo = [
     }
 ]
 
+//Page navigation hiding and showing
+const startPage=document.querySelector('.start');
+const setupPage=document.querySelector('.setup');
+const playPage=document.querySelector('.play');
+const resultPage=document.querySelector('.result');
+
+//.start to .setup transition
+const beginSetupButton=document.querySelector('button#begin-setup');
+
+beginSetupButton.addEventListener('click', function(){
+    setupPage.style.display = "block";
+    startPage.style.display = "none";
+})
+
+//.result to .setup transition
+const restartButton=document.querySelector('button#play-again');
+
+restartButton.addEventListener('click', function(){
+    setupPage.style.display = "block";
+    resultPage.style.display = "none";
+})
+
 const numOfTracks=trackInfo.length;
 
 const beginGameButton = document.querySelector('button#start-game-button');
@@ -74,10 +96,13 @@ seeResultButton.addEventListener('click', endGame);
 nextButton.addEventListener('click', setupGame);
 
 function setupGame(){
-    if (roundAnswer.length == 5){
+    if (roundAnswer.length == 5){ //hide/show the buttons on last round
         seeResultButton.style.display = "block";
         nextButton.style.display = "none";
-    } 
+    } else if (roundAnswer.length==0){ //hiding .setup and showing .play on start of round
+        playPage.style.display = "block";
+        setupPage.style.display = "none";
+    }
 
     let randomNum;
     do{ // Get new random number if the current one has already been used. PROBS NOT THE MOST EFFICIENT METHOD.
@@ -155,7 +180,12 @@ function endGame(){
 
     seeResultButton.style.display = "none";
     nextButton.style.display = "block";
+
+    playPage.style.display = "none";
+    resultPage.style.display = "block";
+
     userScore = 0;
+    roundAnswer=[];
 }
 function scoreCategory(score){
     switch(score){

@@ -97,7 +97,7 @@ nextButton.addEventListener('click', setupGame);
 
 function setupGame(){
     if (roundAnswer.length == 5){ //hide/show the buttons on last round
-        seeResultButton.style.display = "block";
+        seeResultButton.style.display = "block"; //this is making button left-align 
         nextButton.style.display = "none";
     } else if (roundAnswer.length==0){ //hiding .setup and showing .play on start of round
         playPage.style.display = "block";
@@ -123,8 +123,10 @@ function setupGame(){
     //Add options to HTML
     for(let i=0; i<options.length;i++){
         selectedOptions[i].textContent=options[i];
+        if (selectedOptions[i].style.backgroundColor == "green" || selectedOptions[i].style.backgroundColor == "red"){
+            selectedOptions[i].style.backgroundColor = "black";
+        }
     }
-    
 }
 
 function appendText(element, content){

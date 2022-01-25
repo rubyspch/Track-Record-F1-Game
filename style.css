@@ -24,15 +24,25 @@ body{
 #container .setup, .play,.result{
     display: none;
 }
+.start section{
+    height:100%;
+    font-family:monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 #container .start button{
     height:30px;
     width: 50%;
+    margin-bottom: 10%;
 }
 #container .start button::after{
     content:"Lights out..."
 }
 #container .start button:hover::after{
     content: "...and away we go!";
+    cursor: pointer;
 }
 #container .play img{
     width:70%;

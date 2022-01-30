@@ -5,46 +5,151 @@
 //Collect the data for the actual tracks and pics (from f1 website)
 const trackInfo = [
     {
-        name:"Monza",
-        firstWinner: "John Doe",
-        lastWinner: "Jane Doe",
-        yearsActive:[2021,2020,2019,2018],
-        picture:"/Track_Photos/MonzaPhoto.png"
+        name:"Bahrain International Circuit, Bahrain",
+        firstWinner: " Michael Schumacher, 2004",
+        lastWinner: "Lewis Hamilton, 2021",
+        yearsActive:[2021,2020,2019,2018, 2017, 2015],
+        picture:"/Track_Photos/BahrainPhoto.png"
     },
     {
-        name:"Monza2",
-        firstWinner: "John Doe2",
-        lastWinner: "Jane Doe2",
-        yearsActive:[2021,2020,2019,2018],
-        picture:"/Track_Photos/MonzaPhoto.png"
+        name:"Autodromo Enzo e Dino Ferrari, Imola, Italy",
+        firstWinner: "Nelson Piquet, 1980",
+        lastWinner: "Max Verstappen, 2021",
+        yearsActive:[2021,2020,2019,2018, 2017, 2015],
+        picture:"/Track_Photos/ImolaPhoto.png"
     },
     {
-        name:"Monza3",
-        firstWinner: "John Doe3",
-        lastWinner: "Jane Doe3",
-        yearsActive:[2021,2020,2019,2018],
-        picture:"/Track_Photos/MonzaPhoto.png"
-    },
-    {
-        name:"Monaco",
-        firstWinner: "Monty Carlo",
-        lastWinner: "Monica Carlo",
-        yearsActive:[2021,2020,2019,2018, 2017, 2014],
-        picture:"/Track_Photos/MonacoPhoto.png"
-    },
-    {
-        name:"Monaco2",
-        firstWinner: "Monty Carlo2",
-        lastWinner: "Monica Carlo2",
+        name:"Circuit de Monaco, Monaco",
+        firstWinner: "Juan Manuel Fangio, 1950",
+        lastWinner: "Max Verstappen, 2021",
         yearsActive:[2021,2020,2019,2018, 2017, 2015],
         picture:"/Track_Photos/MonacoPhoto.png"
     },
     {
-        name:"Monaco3",
-        firstWinner: "Monty Carlo3",
-        lastWinner: "Monica Carlo3",
+        name:"Autódromo Internacional do Algarve, Portamao, Portugal",
+        firstWinner: "Lewis Hamilton, 2020",
+        lastWinner: "Lewis Hamilton, 2021",
+        yearsActive:[2021,2020,2019,2018, 2017, 2015],
+        picture:"/Track_Photos/PortomaoPhoto.png"
+    },
+    {
+        name:"Circuit de Barcelona-Catalunya, Spain",
+        firstWinner: "Nigel Mansell, 1991",
+        lastWinner: "Lewis Hamilton, 2021",
         yearsActive:[2021,2020,2019,2018, 2017, 2016],
-        picture:"/Track_Photos/MonacoPhoto.png"
+        picture:"/Track_Photos/BarcelonaPhoto.png"
+    },
+    {
+        name:"Baku City Circuit, Azerbaijan",
+        firstWinner: "Daniel Ricciardo, 2016",
+        lastWinner: "Sergio Perez, 2021",
+        yearsActive:[2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/BakuPhoto.png"
+    },
+    {
+        name:"Hungaroring, Hungary",
+        firstWinner: "Nelson Piquet, 1986",
+        lastWinner: "Esteban Ocon, 2021",
+        yearsActive:[2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/HungaryPhoto.png"
+    },
+    {
+        name:"Circuit Paul Ricard, France",
+        firstWinner: "Jackie Stewart, 1971",
+        lastWinner: "Max Verstappen, 2021",
+        yearsActive:[2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/PaulRicardPhoto.png"
+    },
+    {
+        name:"Red Bull Ring, Styria, Austria",
+        firstWinner: "Jacky Ickx, 1970",
+        lastWinner: "Max Verstappen, 2021",
+        yearsActive:[2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/StyriaPhoto.png"
+    },
+    {
+        name:"Silverstone Circuit, Great Britain",
+        firstWinner: " Giuseppe Farina, 1950",
+        lastWinner: "Lewis Hamilton, 2021",
+        yearsActive:[2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/SilverstonePhoto.png"
+    },
+    {
+        name:"Circuit de Spa-Francorchamps, Belgium",
+        firstWinner: "Juan Manuel Fangio, 1950",
+        lastWinner: "Max Verstappen, 2021",
+        yearsActive:[2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/SpaPhoto.png"
+    },
+    {
+        name:"Autodromo Nazionale Monza, Italy",
+        firstWinner: "Giuseppe Farina, 1950",
+        lastWinner: "Daniel Ricciardo, 2021",
+        yearsActive:[2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/MonzaPhoto.png"
+    },
+    {
+        name:"Sochi Autodrom, Russia",
+        firstWinner: "Lewis Hamilton, 2014",
+        lastWinner: "Lewis Hamilton, 2021",
+        yearsActive:[2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/SochiPhoto.png"
+    },
+    {
+        name: "Intercity Istanbul Park, Turkey",
+        firstWinner: "Kimi Räikkönen, 2005",
+        lastWinner: "Valtteri Bottas, 2021",
+        yearsActive: [2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/TurkeyPhoto.png"
+    },
+    {
+        name: "Circuit of The Americas, USA",
+        firstWinner: "Lewis Hamilton, 2012",
+        lastWinner: "Max Verstappen, 2021",
+        yearsActive: [2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/AmericasPhoto.png"
+    },
+    {
+        name: "Autódromo Hermanos Rodríguez, Mexico",
+        firstWinner: "Jim Clark, 1963",
+        lastWinner: "Max Verstappen, 2021",
+        yearsActive: [2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/MexicoPhoto.png"
+    },
+    {
+        name: "Autódromo Hermanos Rodríguez, Mexico",
+        firstWinner: "Jim Clark, 1963",
+        lastWinner: "Max Verstappen, 2021",
+        yearsActive: [2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/MexicoPhoto.png"
+    },
+    {
+        name: "Autódromo José Carlos Pace / Interlagos, Brazil",
+        firstWinner: "Emerson Fittipaldi, 1973",
+        lastWinner: "Max Verstappen, 2021",
+        yearsActive: [2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/BrazilPhoto.png"
+    },
+    {
+        name: "Losail International Circuit, Qatar",
+        firstWinner: "Lewis Hamilton, 2021",
+        lastWinner: "Lewis Hamilton, 2021",
+        yearsActive: [2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/QatarPhoto.png"
+    },
+    {
+        name: "Jeddah Corniche Circuit, Saudi Arabia",
+        firstWinner: "Lewis Hamilton, 2021",
+        lastWinner: "Lewis Hamilton, 2021",
+        yearsActive: [2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/JeddahPhoto.png"
+    },
+    {
+        name: "Yas Marina Circuit, Abu Dhabi",
+        firstWinner: "Sebastian Vettel, 2009",
+        lastWinner: "Max Verstappen, 2021",
+        yearsActive: [2021,2020,2019,2018, 2017, 2016],
+        picture:"/Track_Photos/AbuDhabiPhoto.png"
     }
 ]
 
@@ -101,7 +206,7 @@ seeResultButton.addEventListener('click', endGame);
 nextButton.addEventListener('click', setupGame);
 
 function setupGame(){
-    if (roundAnswer.length == 5){ //hide/show the buttons on last round
+    if (roundAnswer.length == 10){ //hide/show the buttons on last round
         seeResultButton.style.display = "block"; //this is making button left-align 
         nextButton.style.display = "none";
     } else if (roundAnswer.length==0){ //hiding .setup and showing .play on start of round

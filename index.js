@@ -155,15 +155,14 @@ const trackInfo = [
 
 //Page navigation hiding and showing
 const startPage=document.querySelector('.start');
-const setupPage=document.querySelector('.setup');
 const playPage=document.querySelector('.play');
 const resultPage=document.querySelector('.result');
 
 //.start to .setup transition
-const beginSetupButton=document.querySelector('button#begin-setup');
+const beginGameButton=document.querySelector('button#begin-game');
 
-beginSetupButton.addEventListener('click', function(){
-    setupPage.style.display = "block";
+beginGameButton.addEventListener('click', function(){
+    playPage.style.display = "block";
     startPage.style.display = "none";
 })
 
@@ -171,13 +170,12 @@ beginSetupButton.addEventListener('click', function(){
 const restartButton=document.querySelector('button#play-again');
 
 restartButton.addEventListener('click', function(){
-    setupPage.style.display = "block";
+    startPage.style.display = "block";
     resultPage.style.display = "none";
 })
 
 const numOfTracks=trackInfo.length;
 
-const beginGameButton = document.querySelector('button#start-game-button');
 
 beginGameButton.addEventListener('click', setupGame);
 
@@ -211,7 +209,7 @@ function setupGame(){
         nextButton.style.display = "none";
     } else if (roundAnswer.length==0){ //hiding .setup and showing .play on start of round
         playPage.style.display = "block";
-        setupPage.style.display = "none";
+        startPage.style.display = "none";
     }
 
     let randomNum;
@@ -302,9 +300,9 @@ function endGame(){
 function scoreCategory(score){
     switch(score){
         case(10):
-            return "Perfect score! Try upping the difficulty.";
+            return "Perfect score! Try again, there will be different tracks every time.";
         case(8||9):
-            return "Nearly perfect, try again.";
+            return "Nearly perfect, try again!";
         case(5||6||7):
             return "Solid score! Keep practicing.";
         case(3||4):

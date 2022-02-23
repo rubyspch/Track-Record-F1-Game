@@ -6,30 +6,28 @@ body{
     background-color: #15151e;
 }
 #container{
-    margin: 5vh auto;
-    height: 90vh;
+    margin: 10px auto;
+    min-height: 90vh;
     width: 80vw;
     border: 1px black solid;
     text-align: center;
     background-color: #f7f7f7;
     border-radius: 10px;
 }
-#container div{
-    height:100%;
-    width: 100%;
-}
+
 #container .start{
     display: block;
+    
 }
-#container .setup, .play,.result{
+#container .play, #container .result{
     display: none;
+    height: 100%;
 }
 .start section{
-    height:100%;
     font-family:monospace;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 .start section h1{
@@ -38,6 +36,11 @@ body{
 .start section h2{
     width:80%;
     line-height: 7vh; 
+}
+.start section p{
+    width:80%;
+    line-height: 5vh;
+    margin-bottom: 20px;
 }
 #container .start button{
     height:50px;
@@ -52,7 +55,7 @@ body{
     content: "...and away we go!";
     cursor: pointer;
 }
-#container .play img{
+#container .play #game-play img{
     width:70%;
 }
 #container #see-result{
@@ -70,28 +73,17 @@ section button{
     background-color: black;
     border: black solid 1px;
 }
-
 #next, #see-result{
     height: 4vh;
     color: black;
     background-color: red;
     border: red 1px solid;
+    margin-bottom: 10px;
 }
-.setup form{
-    display:flex;
-    flex-direction: column;
-    width:100%;
-    height:100%;
-    align-items: center;
-    justify-content: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+#see-result{
+    margin: 0 auto 10px auto;
 }
-
-.setup form p{
-    width: 80%;
-}
-
-.result{
+#game-play, .result{
     display:flex;
     flex-direction: column;
     width:100%;

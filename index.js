@@ -2,7 +2,7 @@
 // Only allow user to attempt question once
 //show the correct answer if user answers incorrectly
 //Make it look pretty
-//Collect the data for the actual tracks and pics (from f1 website)
+// sort container heights
 const trackInfo = [
     {
         name:"Bahrain International Circuit, Bahrain",

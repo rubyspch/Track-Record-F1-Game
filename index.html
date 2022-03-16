@@ -14,60 +14,35 @@
                 <section>
                     <h1>🏁 Track Record 🏁</h1>
                     <h2>Can you recognise F1 tracks by their outline? <br>Test yourself and practice using Track Record</h2>
-                    <button id="begin-setup"></button>
+                    <p>You will be shown the track outline and be given 3 names to choose from. There is no time limit but you'll only get one shot to select the answer.</p><br>
+                    <button id="begin-game"></button>
                 </section>
-            </div>
-
-            <div class="setup">
-                <form action="#">
-                    <!-- <section>
-                        <input type="radio" id="free-pratice" name="difficulty-level" value="free-pratice">
-                        <label for="free-practice">Free Practice</label>
-
-                        <input type="radio" id="softs" name="difficulty-level" value="softs">
-                        <label for="softs">Softs</label>
-                        
-                        <input type="radio" id="mediums" name="difficulty-level" value="mediums">
-                        <label for="mediums">Mediums</label>
-
-                        <input type="radio" id="hards" name="difficulty-level" value="hards">
-                        <label for="hards">Hards</label>
-                    </section> 
-                    <p id="">Explanation of the level selected will appear here depending on which they choose.</p>-->
-                    <p>You will be shown the track outline and be given 3 names to choose from. There is no time limit but you'll only get one shot to select the answer. The tracks will be 10 out of a pool of the 50 most visited race tracks in F1 history. <br><br>You can choose now to include details about the track that may help you:</p>
-                    <input type="checkbox" id="past-winners" name="past-winners" value="show-winners-yes" checked>
-                    <label for="past-winners">First and most recent winner</label><br>
-
-                    <input type="checkbox" id="active-dates" name="active-dates" value="show-dates-yes" checked>
-                    <label for="active-dates">Years on F1 calender</label> <br>
-
-                    <button id="start-game-button">Start</button>
-                </form>
             </div>
 
             <div class="play">
-                
-                <img src="#" alt="Track Outline" id="track-photo">
+                <div id="game-play">
+                    <img src="#" alt="Track Outline" id="track-photo">
 
-                <section class="current-track-data">
-                    <p>First winner here:<span id="track-first-winner"></span></p>
-                    <p>Most recent winner here:<span id="track-last-winner"></span></p>
-                    <p>Years on the calendar:<br><span id="track-years-active"></span></p>
-                </section> 
+                    <section class="current-track-data">
+                        <p>First winner here:<span id="track-first-winner"></span></p>
+                        <p>Most recent winner here:<span id="track-last-winner"></span></p>
+                        <p>Years on the calendar:<br><span id="track-years-active"></span></p>
+                    </section> 
 
-                <section id="multiple-choice">
-                    <!-- <input type="radio" name="options" value="option-1"> -->
-                    <button id="option-1" >Option 1</button><br>
+                    <section id="multiple-choice">
+                        <!-- <input type="radio" name="options" value="option-1"> -->
+                        <button id="option-1" >Option 1</button><br>
 
-                    <!-- <input type="radio" name="options" value="option-2"> -->
-                    <button id="option-2" >Option 2</button><br>
+                        <!-- <input type="radio" name="options" value="option-2"> -->
+                        <button id="option-2" >Option 2</button><br>
+                        
+                        <!-- <input type="radio" name="options" value="option-3"> -->
+                        <button id="option-3" >Option 3</button><br>
+                    </section>
                     
-                    <!-- <input type="radio" name="options" value="option-3"> -->
-                    <button id="option-3" >Option 3</button><br>
-                </section>
-                
-                <button id="next">Next</button>
-                <button id="see-result">See result</button>
+                    <button id="next">Next</button>
+                    <button id="see-result">See result</button>
+                </div>
             </div>
 
             <div class="result">
